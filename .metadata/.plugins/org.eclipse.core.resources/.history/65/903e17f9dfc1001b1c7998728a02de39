@@ -1,0 +1,16 @@
+package com.care.root.dto;
+
+public class HateoasDTO {
+	private String userId;
+	private String name;
+	private String addr;
+	
+	public HateoasDTO() {}
+	public HateoasDTO(String userId, String name, String addr) {
+		this.userId = userId;
+		this.name = name;
+		this.addr = addr;
+	
+	}
+	
+}

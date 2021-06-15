@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>삼항 연산자</h3>
+	<span th:text="${num} > 10 ? ${num} : 거짓실행"></span>
+	<h3>switch</h3>
+	<div th:switch="${num}">
+		<span th:case="1">1입니다</span>
+		<span th:case="2" th:text="2입니다">1입니다</span>
+		<span th:case="*">default 값</span>
+	</div>
+	<h3>if & switch 문</h3>
+	<table border="1">
+		<tr>
+			<td th:id="${num} > 0" th:text="환영합니다"></td>
+			<td th:unless="${num} > 0">환영하지 않습니다</td>
+		</tr>
+		<tr th:each="obj:${arr}" th:if="${arr.size()} > 0">
+			<td th:text="${obj}"></td>
+		</tr>
+	</table>
+	arr.size() : [[ ${arr.size()} ]]<br>
+	arr[0] : [[ ${arr[0]} ]]
+</body>
+</html>

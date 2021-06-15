@@ -1,0 +1,14 @@
+package com.care.root.producer;
+
+import org.springframework.amqp.rabbit.core.RabbitMessagingTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class MessageProducer {
+	@Autowired
+	RabbitMessagingTemplate template;
+	public void send(String message) {
+		template.convertAndSend(message);
+	}
+}

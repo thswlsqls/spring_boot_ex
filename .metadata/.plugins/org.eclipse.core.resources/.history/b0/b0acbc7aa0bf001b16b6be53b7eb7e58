@@ -1,0 +1,9 @@
+package com.care.root.service;
+
+import org.springframework.ui.Model;
+
+public class TestService {
+	public void getMembers(Model model) {
+		model.addAttribute("members", dao.getMembers());
+	}
+}

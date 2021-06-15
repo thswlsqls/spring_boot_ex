@@ -1,0 +1,9 @@
+package com.care.root.dao;
+
+import java.util.ArrayList;
+
+import com.care.root.dto.TestDto;
+
+public interface TestDao {
+	public ArrayList<TestDto> getMembers();
+}

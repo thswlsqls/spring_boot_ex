@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="movie_search_test"/>
+<aop-project name="ex06-sender"/>
+<aop-project name="ex01"/>
+<aop-project name="ex02"/>
+<aop-project name="ex03"/>
+<aop-project name="ex04"/>
+<aop-project name="ex05"/>
+<aop-project name="movie_view_test"/>
+<aop-project name="ex06-receiver"/>
+</aop-reference-model>

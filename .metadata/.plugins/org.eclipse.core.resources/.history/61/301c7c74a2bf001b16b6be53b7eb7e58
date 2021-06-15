@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+        <div th:each="member:${members}">
+                id : [[${member.id}]]<br>
+                age : [[${member.age}]]<br>
+                name : 
+                <a th:href="@{member(id=${member.id})}">[[${member.name}]]</a>
+                [[${member.name}]]<hr>
+        </div>
+</body>
+</html>

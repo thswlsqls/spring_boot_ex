@@ -1,0 +1,33 @@
+package com.care.root.service;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Service;
+
+import com.care.root.dto.HateoasDTO;
+
+@Service
+public class HateoasService {
+	
+	ArrayList<HateoasDTO> users;
+	public ArrayList<HateoasDTO> getUserList(){
+		HateoasDTO u01 = new HateoasDTO("1", "홍길동", "산골짜기");
+		HateoasDTO u02 = new HateoasDTO("2", "고길동", "마포구");
+		HateoasDTO u03 = new HateoasDTO("3", "이기자", "운동장");
+		users = new ArrayList<HateoasDTO>();
+		users.add(u01);
+		users.add(u02);
+		users.add(u03);
+		return users;
+	}
+	
+	public HateoasDTO getUser(String id) {
+		HateoasDTO dto = null;
+		for(HateoasDTO d : users) {
+			if(id.equals(d.getUserId())) {
+				return d;
+			}
+		}
+		return null;
+	}
+}

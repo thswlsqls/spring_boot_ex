@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+   function getUsers() {
+      $.ajax({
+         url : "users", type : "GET", 
+         dataType:'json', //돌려받을 타입지정
+         success : function(list) {
+            $("#users").text(list); showUsers(list);
+         }, error : function() { alert("문제가 발생 했습니다") }
+      });
+   }
+   function showUsers(list) {
+      let html = "<table border='1'>";
+      html += "<tr><th>아이디</th><th>이름</th><th>주소</th></tr>"
+      $.each(list, function(index, item) {
+         html += "<tr>";
+         html += "<td>" + item.userId + "</td>";
+         html += "<td style='cursor:pointer;' onclick='user("+item.userId+")'>" + item.name + "</td>";
+         html += "<td>" + item.addr + "</td>";
+         html += "</tr>";
+      });
+      html += "</table>";
+      $("#showUsers").html(html);
+   }
+   function user(userId){
+      console.log('클릭 : '+userId)
+      $.ajax({
+         url:"user/"+userId, type:"GET",dataType:'json',
+         success: function(user){
+            $("#users").text(user)
+            showUser(user)
+         },error: function(){
+            alert("문제가 발생 했습니다")
+         }
+      })
+   }
+   function showUser(user){
+      let html="<b>아이디 : </b>"+user.userId+"<br>";
+      html+= "<b>이름 : </b>"+user.name+"<br>"
+      html+= "<b>주소 : </b>"+user.addr+"<br>"
+      $("#showUsers").html(html)
+   }
+</script>
+</head>
+<body>
+   <span id='users'></span>
+   <div id="showUsers"></div>
+   <button type="button" onclick="getUsers()">사용자 목록 보기</button>
+</body>
+</html>

@@ -1,0 +1,21 @@
+package com.care.root.custom;
+
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.stereotype.Component;
+
+@Component
+public class MessageCustom {
+	@RabbitListener(queues = "TestQueue")
+	public void processMessage(String content) {
+		try {
+			System.out.println("==== content(이메일 전송 코드) : "+content);
+			Thread.sleep(100000);
+			System.out.println("이메일 전송 완료");
+		}catch (Exception e){
+			
+		}
+	}
+}
+
+
+

@@ -1,0 +1,7 @@
+package com.care.root.dto;
+
+import org.springframework.hateoas.RepresentationModel;
+
+public class UrlDto extends RepresentationModel<UrlDto>{
+
+}

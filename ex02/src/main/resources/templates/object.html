@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+        <h3>session</h3>
+        <div th:text="${session.user.name}"></div>
+        <div th:text="${session.user.addr}"></div>
+        <div th:object="${session.user}">
+                <p th:text="*{name}"></p>
+                <p th:text="*{addr}"></p>
+        </div>
+        
+        <h3>model</h3>
+        <div th:text="${user.name}"></div>
+        <div th:text="${user.addr}"></div>
+        <div th:object="${user}">
+                <p th:text="*{name}"></p>
+                <p th:text="*{addr}"></p>
+        </div>
+        <hr>
+        
+        <a href="home">home</a><br>
+        <a th:href="@{home}" th:text="${user.name}"></a><br>
+        <a th:href="@{'home/' + ${user.name} }">경로값으로 전달</a><br>
+        <a th:href="@{home(name=${user.name}) }">하나의 값</a><br>
+        <a th:href="@{home(name=${user.name},addr=${user.addr}) }">여러개 값</a><br>
+        <hr>
+        
+        <span th:utext="${msg}"></span>
+        
+ 
+</body>
+</html>
+
+
+

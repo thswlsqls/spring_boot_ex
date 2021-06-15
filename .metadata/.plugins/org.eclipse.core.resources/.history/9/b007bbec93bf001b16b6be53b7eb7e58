@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<header th:include="/default/header"></header>
+	내용이 들어옴
+	<div th:include="/default/footer"></div>
+</body>
+</html>

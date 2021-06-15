@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+	<div class="wrap">
+		<h1 class="title">CARE LAB</h1>
+	</div>
+</body>
+</html>

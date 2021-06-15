@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	index.html파일 입니다.<br>
+	내용 수정 3
+	<hr>
+	<h3>session</h3>
+	session => <span th:text="${session.user}"> </span> <br>
+	<h3>model</h3>
+	model => <h5 th:text="${user}"></h5>
+</body>
+</html>

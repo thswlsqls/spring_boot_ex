@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>session</h3>
+	<div th:text="${session.user.name}"></div>
+	<div th:text="${session.user.addr}"></div>
+	<h3>model</h3>
+	<div th:text="${user.name}"></div>
+	<div th:text="${user.addr}"></div>
+</body>
+</html>

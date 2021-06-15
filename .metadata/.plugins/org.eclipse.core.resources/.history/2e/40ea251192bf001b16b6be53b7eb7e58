@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>삼항 연산자</h3>
+	<span th:text="${num} > 10 ? ${num} : 거짓실행"></span>
+	<h3>switch</h3>
+	<div th:switch="${num}">
+		<span th:case="1">1입니다</span>
+	</div>
+</body>
+</html>

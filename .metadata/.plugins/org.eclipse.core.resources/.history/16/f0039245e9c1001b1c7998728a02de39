@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+   function getUsers() {
+      $.ajax({
+         url : "gethateoas",
+         type : "GET",dataType:'json',
+         success : function(user) { showUser(user); },
+         error : function() { alert("문제가 발생 했습니다") }
+      });
+   }
+   function showUser(user) {
+      let url = user._links
+      let selfLink = url.self.href
+      let userIdLink = url.board.href
+      let modifyLink = url.member.href
+
+      let userId = "<a href='"+selfLink+"'>" + user.userId + "</a>&nbsp;"
+      let name = "<a href='"+userIdLink+"'>" + user.name + "</a>&nbsp;"
+      let addr = "<a href='"+modifyLink+"'>" + user.addr + "</a>"
+
+      $('#location').html(userId + name + addr);
+      let html = "<b>아이디 : </b>" + user.userId + "<br>";
+      html += "<b>이름 : </b>" + user.name + "<br>";
+      html += "<b>주소 : </b>" + user.addr + "<br>";
+      $("#showUser").html(html);
+   }
+</script>
+</head>
+<body onload="getUsers()">
+   <div id="location"></div>
+   <div id="showUser"></div>
+</body>
+</html>
